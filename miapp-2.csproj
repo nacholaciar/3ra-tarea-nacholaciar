@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaPersona.Designer.cs">
+      <DependentUpon>AltaPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="entidades\usuario.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AltaPersona.resx">
+      <DependentUpon>AltaPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>

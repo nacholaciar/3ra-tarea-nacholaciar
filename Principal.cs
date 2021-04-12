@@ -35,5 +35,11 @@ namespace miapp_2
         {
 
         }
+
+        private void altaPersonaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaPersona ventana = new AltaPersona();
+            ventana.Show();
+        }
     }
 }
