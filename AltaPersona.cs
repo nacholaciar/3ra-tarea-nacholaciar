@@ -168,6 +168,7 @@ namespace miapp_2
             bool tieneNombre = false;
             bool tieneApellido = false;
             bool tieneDocumento = false;
+            bool existeEnGrilla = false;
 
             if(txtNombre.Text.Equals(""))
             {
@@ -199,7 +200,13 @@ namespace miapp_2
                 tieneDocumento = true;
             }
 
-            if (tieneNombre && tieneApellido && tieneDocumento)
+            existeEnGrilla = existeGrilla(nroDocumento);
+            if(existeEnGrilla == true)
+            {
+                MessageBox.Show("Persona dada de alta previamente en el sistema");
+            }
+
+            if (tieneNombre && tieneApellido && tieneDocumento && existeEnGrilla == false)
             {
                 persona per = new persona(nroDocumento, apellido, nombre);
                 AddPersona(per);
@@ -248,6 +255,24 @@ namespace miapp_2
             ckCasado.Checked = false;
             ckHijo.Checked = false;
 
+        }
+
+
+        private bool existeGrilla (string criterioABuscar)
+        {
+            bool resultado = false;
+
+            for (int i = 0; i < dgPersona.Rows.Count; i++)
+            {
+                if (dgPersona.Rows[i].Cells["Documento"].Value.Equals(criterioABuscar))
+                {
+                    return true;
+                    break;
+                }
+
+            }
+
+            return resultado;
         }
     }
 }
