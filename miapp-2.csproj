@@ -52,6 +52,7 @@
     <Compile Include="AltaPersona.Designer.cs">
       <DependentUpon>AltaPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="entidades\persona.cs" />
     <Compile Include="entidades\usuario.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>

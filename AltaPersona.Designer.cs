@@ -31,8 +31,8 @@ namespace miapp_2
         {
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
             this.mskNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.lblNacimiento = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
@@ -58,7 +58,12 @@ namespace miapp_2
             this.btnGuardarPersona = new System.Windows.Forms.Button();
             this.btnLimpiarDatos = new System.Windows.Forms.Button();
             this.lblDAdicionales = new System.Windows.Forms.Label();
+            this.dgPersona = new System.Windows.Forms.DataGridView();
+            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPersona)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -79,25 +84,25 @@ namespace miapp_2
             this.txtNombre.Size = new System.Drawing.Size(183, 23);
             this.txtNombre.TabIndex = 1;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(197, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 23);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // txtApellido
             // 
-            this.txtApellido.AutoSize = true;
-            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(120, 74);
+            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(197, 71);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(71, 17);
-            this.txtApellido.TabIndex = 2;
-            this.txtApellido.Text = "Apellido:";
-            this.txtApellido.Click += new System.EventHandler(this.label1_Click);
+            this.txtApellido.Size = new System.Drawing.Size(183, 23);
+            this.txtApellido.TabIndex = 3;
+            this.txtApellido.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.Location = new System.Drawing.Point(120, 74);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(71, 17);
+            this.lblApellido.TabIndex = 2;
+            this.lblApellido.Text = "Apellido:";
+            this.lblApellido.Click += new System.EventHandler(this.label1_Click);
             // 
             // mskNacimiento
             // 
@@ -334,7 +339,7 @@ namespace miapp_2
             // btnGuardarPersona
             // 
             this.btnGuardarPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarPersona.Location = new System.Drawing.Point(491, 484);
+            this.btnGuardarPersona.Location = new System.Drawing.Point(449, 484);
             this.btnGuardarPersona.Name = "btnGuardarPersona";
             this.btnGuardarPersona.Size = new System.Drawing.Size(148, 36);
             this.btnGuardarPersona.TabIndex = 23;
@@ -345,7 +350,7 @@ namespace miapp_2
             // btnLimpiarDatos
             // 
             this.btnLimpiarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarDatos.Location = new System.Drawing.Point(491, 435);
+            this.btnLimpiarDatos.Location = new System.Drawing.Point(449, 435);
             this.btnLimpiarDatos.Name = "btnLimpiarDatos";
             this.btnLimpiarDatos.Size = new System.Drawing.Size(148, 36);
             this.btnLimpiarDatos.TabIndex = 24;
@@ -363,11 +368,45 @@ namespace miapp_2
             this.lblDAdicionales.TabIndex = 25;
             this.lblDAdicionales.Text = "Datos adicionales:";
             // 
+            // dgPersona
+            // 
+            this.dgPersona.AllowUserToAddRows = false;
+            this.dgPersona.AllowUserToDeleteRows = false;
+            this.dgPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPersona.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.documento,
+            this.Nombre,
+            this.Apellido});
+            this.dgPersona.Location = new System.Drawing.Point(494, 32);
+            this.dgPersona.Name = "dgPersona";
+            this.dgPersona.ReadOnly = true;
+            this.dgPersona.Size = new System.Drawing.Size(343, 367);
+            this.dgPersona.TabIndex = 26;
+            // 
+            // documento
+            // 
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
             // AltaPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 548);
+            this.ClientSize = new System.Drawing.Size(870, 548);
+            this.Controls.Add(this.dgPersona);
             this.Controls.Add(this.lblDAdicionales);
             this.Controls.Add(this.btnLimpiarDatos);
             this.Controls.Add(this.btnGuardarPersona);
@@ -390,8 +429,8 @@ namespace miapp_2
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblNacimiento);
             this.Controls.Add(this.mskNacimiento);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Name = "AltaPersona";
@@ -400,6 +439,7 @@ namespace miapp_2
             this.Load += new System.EventHandler(this.AltaPersona_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPersona)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,8 +449,8 @@ namespace miapp_2
 
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label txtApellido;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.MaskedTextBox mskNacimiento;
         private System.Windows.Forms.Label lblNacimiento;
         private System.Windows.Forms.Label lblSexo;
@@ -436,5 +476,9 @@ namespace miapp_2
         private System.Windows.Forms.Button btnGuardarPersona;
         private System.Windows.Forms.Button btnLimpiarDatos;
         private System.Windows.Forms.Label lblDAdicionales;
+        private System.Windows.Forms.DataGridView dgPersona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
     }
 }

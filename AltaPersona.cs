@@ -1,4 +1,5 @@
-﻿using System;
+﻿using miapp_2.entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -104,7 +105,7 @@ namespace miapp_2
             string resultado = "";
 
             string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
+            string apellido = lblApellido.Text;
             string nacimiento = mskNacimiento.Text;
             string sexo = "";
             if (rdMasculino.Checked)
@@ -162,7 +163,33 @@ namespace miapp_2
             cantidadHijos = txtCantidadH.Text;
 
             string carrera = cbCarrera.GetItemText(cbCarrera.SelectedItem);
-            MessageBox.Show(nombre + " " + apellido + " " + sexo + " " + tipoDucmento + " " + nroDocumento);
+            // MessageBox.Show(nombre + " " + apellido + " " + sexo + " " + tipoDucmento + " " + nroDocumento);
+
+            persona per = new persona(nroDocumento, apellido, nombre);
+            AddPersona(per);
+            // MessageBox.Show("Datos de la persona; " + per.Nombre + " " + per.Apellido + " " + per.Documento);
+        }
+
+        private void AddPersona(persona per)
+        {
+            DataGridViewRow fila = new DataGridViewRow();
+
+            DataGridViewTextBoxCell celdaDocumento = new DataGridViewTextBoxCell();
+            celdaDocumento.Value = per.Documento;
+            fila.Cells.Add(celdaDocumento);
+
+            DataGridViewTextBoxCell celdaNombre = new DataGridViewTextBoxCell();
+            celdaNombre.Value = per.Nombre;
+            fila.Cells.Add(celdaNombre);
+
+            DataGridViewTextBoxCell celdaApellido = new DataGridViewTextBoxCell();
+            celdaApellido.Value = per.Apellido;
+            fila.Cells.Add(celdaApellido);
+
+            dgPersona.Rows.Add(fila);
+            MessageBox.Show("Persona agregada con exito");
+            LimpiarCmapos();
+            txtNombre.Focus(); //el cursor comienza en el nombre
         }
 
         private void btnLimpiarDatos_Click(object sender, EventArgs e)
@@ -173,7 +200,7 @@ namespace miapp_2
         private void LimpiarCmapos()
         {
             txtNombre.Text = "";
-            txtApellido.Text = "";
+            lblApellido.Text = "";
             mskNacimiento.Text = "";
             rdMasculino.Checked = true;
             maskDNI.Text = "";
