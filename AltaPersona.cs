@@ -105,7 +105,7 @@ namespace miapp_2
             string resultado = "";
 
             string nombre = txtNombre.Text;
-            string apellido = lblApellido.Text;
+            string apellido = txtApellido.Text;
             string nacimiento = mskNacimiento.Text;
             string sexo = "";
             if (rdMasculino.Checked)
@@ -122,9 +122,9 @@ namespace miapp_2
             }
 
             string tipoDucmento = cbTDocumento.GetItemText(cbTDocumento.SelectedItem);
-            string nroDocumento = maskDNI.Text;
-            string calle = lblCalle.Text;
-            string nroCasa = lblNroCasa.Text;
+            string nroDocumento = txtDNI.Text;
+            string calle = txtCalle.Text;
+            string nroCasa = txtNroCasa.Text;
 
             string soltero = "";
             string casado = "";
@@ -165,8 +165,46 @@ namespace miapp_2
             string carrera = cbCarrera.GetItemText(cbCarrera.SelectedItem);
             // MessageBox.Show(nombre + " " + apellido + " " + sexo + " " + tipoDucmento + " " + nroDocumento);
 
-            persona per = new persona(nroDocumento, apellido, nombre);
-            AddPersona(per);
+            bool tieneNombre = false;
+            bool tieneApellido = false;
+            bool tieneDocumento = false;
+
+            if(txtNombre.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese nombre");
+                txtNombre.Focus();
+            }
+            else
+            {
+                tieneNombre = true;
+            }
+            
+            if (txtApellido.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese apellido");
+                txtApellido.Focus();
+            }
+            else
+            {
+                tieneApellido = true;
+            }
+
+            if (txtDNI.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese numero documento");
+                txtDNI.Focus();
+            }
+            else
+            {
+                tieneDocumento = true;
+            }
+
+            if (tieneNombre && tieneApellido && tieneDocumento)
+            {
+                persona per = new persona(nroDocumento, apellido, nombre);
+                AddPersona(per);
+            }
+
             // MessageBox.Show("Datos de la persona; " + per.Nombre + " " + per.Apellido + " " + per.Documento);
         }
 
@@ -200,10 +238,10 @@ namespace miapp_2
         private void LimpiarCmapos()
         {
             txtNombre.Text = "";
-            lblApellido.Text = "";
+            txtApellido.Text = "";
             mskNacimiento.Text = "";
             rdMasculino.Checked = true;
-            maskDNI.Text = "";
+            txtDNI.Text = "";
             txtCalle.Text = "";
             txtNroCasa.Text = "";
             ckSoltero.Checked = false;

@@ -43,7 +43,7 @@ namespace miapp_2
             this.lblDocumento = new System.Windows.Forms.Label();
             this.cbTDocumento = new System.Windows.Forms.ComboBox();
             this.lbDNI = new System.Windows.Forms.Label();
-            this.maskDNI = new System.Windows.Forms.MaskedTextBox();
+            this.txtDNI = new System.Windows.Forms.MaskedTextBox();
             this.txtNroCasa = new System.Windows.Forms.TextBox();
             this.lblNroCasa = new System.Windows.Forms.Label();
             this.txtCalle = new System.Windows.Forms.TextBox();
@@ -218,15 +218,15 @@ namespace miapp_2
             this.lbDNI.Text = "DNI:";
             this.lbDNI.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // maskDNI
+            // txtDNI
             // 
-            this.maskDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskDNI.Location = new System.Drawing.Point(197, 285);
-            this.maskDNI.Mask = "999999999";
-            this.maskDNI.Name = "maskDNI";
-            this.maskDNI.Size = new System.Drawing.Size(100, 23);
-            this.maskDNI.TabIndex = 11;
-            this.maskDNI.ValidatingType = typeof(int);
+            this.txtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.Location = new System.Drawing.Point(197, 285);
+            this.txtDNI.Mask = "999999999";
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(100, 23);
+            this.txtDNI.TabIndex = 11;
+            this.txtDNI.ValidatingType = typeof(int);
             // 
             // txtNroCasa
             // 
@@ -421,7 +421,7 @@ namespace miapp_2
             this.Controls.Add(this.lblNroCasa);
             this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.lblCalle);
-            this.Controls.Add(this.maskDNI);
+            this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.lbDNI);
             this.Controls.Add(this.cbTDocumento);
             this.Controls.Add(this.lblDocumento);
@@ -461,7 +461,7 @@ namespace miapp_2
         private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.ComboBox cbTDocumento;
         private System.Windows.Forms.Label lbDNI;
-        private System.Windows.Forms.MaskedTextBox maskDNI;
+        private System.Windows.Forms.MaskedTextBox txtDNI;
         private System.Windows.Forms.TextBox txtNroCasa;
         private System.Windows.Forms.Label lblNroCasa;
         private System.Windows.Forms.TextBox txtCalle;
