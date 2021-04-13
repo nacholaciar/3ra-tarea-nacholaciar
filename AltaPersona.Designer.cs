@@ -44,9 +44,9 @@ namespace miapp_2
             this.cbTDocumento = new System.Windows.Forms.ComboBox();
             this.lbDNI = new System.Windows.Forms.Label();
             this.maskDNI = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNroCasa = new System.Windows.Forms.TextBox();
             this.lblNroCasa = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCalle = new System.Windows.Forms.TextBox();
             this.lblCalle = new System.Windows.Forms.Label();
             this.ckSoltero = new System.Windows.Forms.CheckBox();
             this.ckCasado = new System.Windows.Forms.CheckBox();
@@ -198,7 +198,7 @@ namespace miapp_2
             this.cbTDocumento.FormattingEnabled = true;
             this.cbTDocumento.Location = new System.Drawing.Point(197, 247);
             this.cbTDocumento.Name = "cbTDocumento";
-            this.cbTDocumento.Size = new System.Drawing.Size(121, 24);
+            this.cbTDocumento.Size = new System.Drawing.Size(206, 24);
             this.cbTDocumento.TabIndex = 9;
             this.cbTDocumento.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -223,13 +223,13 @@ namespace miapp_2
             this.maskDNI.TabIndex = 11;
             this.maskDNI.ValidatingType = typeof(int);
             // 
-            // textBox2
+            // txtNroCasa
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(197, 365);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 23);
-            this.textBox2.TabIndex = 15;
+            this.txtNroCasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroCasa.Location = new System.Drawing.Point(197, 365);
+            this.txtNroCasa.Name = "txtNroCasa";
+            this.txtNroCasa.Size = new System.Drawing.Size(183, 23);
+            this.txtNroCasa.TabIndex = 15;
             // 
             // lblNroCasa
             // 
@@ -241,13 +241,13 @@ namespace miapp_2
             this.lblNroCasa.TabIndex = 14;
             this.lblNroCasa.Text = "Nro. de casa:";
             // 
-            // textBox3
+            // txtCalle
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(197, 326);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(183, 23);
-            this.textBox3.TabIndex = 13;
+            this.txtCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalle.Location = new System.Drawing.Point(197, 326);
+            this.txtCalle.Name = "txtCalle";
+            this.txtCalle.Size = new System.Drawing.Size(183, 23);
+            this.txtCalle.TabIndex = 13;
             // 
             // lblCalle
             // 
@@ -318,7 +318,7 @@ namespace miapp_2
             this.cbCarrera.FormattingEnabled = true;
             this.cbCarrera.Location = new System.Drawing.Point(197, 484);
             this.cbCarrera.Name = "cbCarrera";
-            this.cbCarrera.Size = new System.Drawing.Size(121, 24);
+            this.cbCarrera.Size = new System.Drawing.Size(206, 24);
             this.cbCarrera.TabIndex = 22;
             // 
             // lblCarrera
@@ -351,6 +351,7 @@ namespace miapp_2
             this.btnLimpiarDatos.TabIndex = 24;
             this.btnLimpiarDatos.Text = "Limpiar Datos";
             this.btnLimpiarDatos.UseVisualStyleBackColor = true;
+            this.btnLimpiarDatos.Click += new System.EventHandler(this.btnLimpiarDatos_Click);
             // 
             // lblDAdicionales
             // 
@@ -377,9 +378,9 @@ namespace miapp_2
             this.Controls.Add(this.ckHijo);
             this.Controls.Add(this.ckCasado);
             this.Controls.Add(this.ckSoltero);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNroCasa);
             this.Controls.Add(this.lblNroCasa);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.lblCalle);
             this.Controls.Add(this.maskDNI);
             this.Controls.Add(this.lbDNI);
@@ -421,9 +422,9 @@ namespace miapp_2
         private System.Windows.Forms.ComboBox cbTDocumento;
         private System.Windows.Forms.Label lbDNI;
         private System.Windows.Forms.MaskedTextBox maskDNI;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNroCasa;
         private System.Windows.Forms.Label lblNroCasa;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.CheckBox ckSoltero;
         private System.Windows.Forms.CheckBox ckCasado;

@@ -164,5 +164,25 @@ namespace miapp_2
             string carrera = cbCarrera.GetItemText(cbCarrera.SelectedItem);
             MessageBox.Show(nombre + " " + apellido + " " + sexo + " " + tipoDucmento + " " + nroDocumento);
         }
+
+        private void btnLimpiarDatos_Click(object sender, EventArgs e)
+        {
+            LimpiarCmapos();
+        }
+
+        private void LimpiarCmapos()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            mskNacimiento.Text = "";
+            rdMasculino.Checked = true;
+            maskDNI.Text = "";
+            txtCalle.Text = "";
+            txtNroCasa.Text = "";
+            ckSoltero.Checked = false;
+            ckCasado.Checked = false;
+            ckHijo.Checked = false;
+
+        }
     }
 }
